@@ -28,7 +28,7 @@ https://1drv.ms/b/c/2151af0b03d46d87/EW8oF2LDARVOnQ5BygsfIkwBA05Gr8TQchRO-k8_RpR
 
 <h2>Dimostrazione</h2>
 
-<p>All'interno del codice ho istanziato degli oggetti per mostrare il processo di prenotazione di 3 utenti in 3 differenti città.</p>
+<p>Questa dimostrazione ha lo scopo di illustrare il flusso di prenotazione di un mezzo di trasporto all'interno del sistema, considerando diversi scenari di utilizzo. Per simulare queste situazioni, sono stati istanziati tre oggetti che rappresentano gli utenti, ciascuno dei quali interagisce con il sistema in modo diverso.</p>
 
 <ul>
     <li><strong>Utente1:</strong> visualizza i mezzi disponibili nella città di Roma, ne sceglie uno e lo prenota.</li>

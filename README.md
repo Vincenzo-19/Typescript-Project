@@ -35,3 +35,5 @@ https://1drv.ms/b/c/2151af0b03d46d87/EW8oF2LDARVOnQ5BygsfIkwBA05Gr8TQchRO-k8_RpR
     <li><strong>Utente2:</strong> prenota il mezzo nella città di Londra ma non inserisce tutti i dati necessari, e viene visualizzato un errore.</li>
     <li><strong>Utente3:</strong> visualizza i mezzi disponibili nella città di Amsterdam, ne sceglie uno e lo prenota.</li>
 </ul>
+
+Nota. una volta su codepen cliccare in basso a sinistra su 'console' per vedere il risultato della dimostrazione.

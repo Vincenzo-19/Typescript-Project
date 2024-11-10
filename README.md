@@ -4,8 +4,6 @@
 
 <p>Questo progetto è una simulazione della struttura organizzativa dell'app di micromobilità Moove, realizzata interamente in TypeScript. Lo scopo principale è quello di modellare le dinamiche tra utenti, veicoli e ambiente urbano, offrendo un'anteprima di come un sistema di mobilità condivisa possa funzionare nella realtà.</p>
 
-<img src="C:\Users\Vincenzo\OneDrive\Desktop\project-images\Progetto Typescript\Screenshot 2024-11-10 095045.png"/>
-
 Qui sotto c'è il link per il progetto⬇️
 
 https://codepen.io/Vincenzo-19/pen/xxvQqXg

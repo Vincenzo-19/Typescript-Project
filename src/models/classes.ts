@@ -1,23 +1,26 @@
 import { IMezzo, IUtente, ICittà } from '../types/interface'
+import { StatoMezzo } from '../types/enum'
 
+// classi
 export class Mezzo implements IMezzo {
     tipo: string
     ID: number
-    stato: string
+    stato: StatoMezzo
 
-    constructor(tipo: string, ID: number, stato: string) {
+    constructor(tipo: string, ID: number, stato: StatoMezzo) {
         this.tipo = tipo
         this.ID = ID
         this.stato = stato
     }
 
     assegnaUtente(utente: IUtente): void {
-        if (this.stato === 'disponibile') {
-            this.stato = 'in uso'
+        if (this.stato === StatoMezzo.DISPONIBILE) {
+            this.stato = StatoMezzo.IN_USO
             console.log(
-                `mezzo: ${this.tipo} con ID ${this.ID} è stato assegnato a ${utente.nome} ${utente.cognome}`
+                `Utente: ${utente.nome} ${utente.cognome}
+mezzo: ${this.tipo} con ID ${this.ID}
+stato del mezzo: ${this.stato}`
             )
-            console.log(`stato del mezzo: ${this.stato}`)
             return
         }
     }
@@ -46,12 +49,12 @@ export class Utente implements IUtente {
             return
         }
 
-        if (mezzo.stato === 'disponibile') {
+        if (mezzo.stato === StatoMezzo.DISPONIBILE) {
             console.log(`la prenotazione del mezzo è statta effettuata con successo.
 Il metodo di pagamento utilizzato è: ${this.metodoDiPagamentoPreferito}`)
         } else {
             console.log(
-                `il mezzo che vuoi prenotare con ID:${mezzo.ID} è attualmente in uso`
+                `il mezzo che vuoi prenotare con ID:${mezzo.ID} è attualmente ${mezzo.stato}`
             )
         }
     }
@@ -74,7 +77,7 @@ export class Città implements ICittà {
     visualizzaMezziDisponibili(): void {
         console.log(`Mezzi disponibili a ${this.nomeCittà}:`)
         this.elencoMezziDisponibili.forEach((mezzo) => {
-            if (mezzo.stato === 'disponibile') {
+            if (mezzo.stato === StatoMezzo.DISPONIBILE) {
                 console.log(`- ${mezzo.tipo} con ID ${mezzo.ID}`)
             }
         })

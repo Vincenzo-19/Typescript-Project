@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Città = exports.Utente = exports.Mezzo = void 0;
+var enum_1 = require("../types/enum");
+// classi
 var Mezzo = /** @class */ (function () {
     function Mezzo(tipo, ID, stato) {
         this.tipo = tipo;
@@ -8,10 +10,9 @@ var Mezzo = /** @class */ (function () {
         this.stato = stato;
     }
     Mezzo.prototype.assegnaUtente = function (utente) {
-        if (this.stato === 'disponibile') {
-            this.stato = 'in uso';
-            console.log("mezzo: ".concat(this.tipo, " con ID ").concat(this.ID, " e\u0300 stato assegnato a ").concat(utente.nome, " ").concat(utente.cognome));
-            console.log("stato del mezzo: ".concat(this.stato));
+        if (this.stato === enum_1.StatoMezzo.DISPONIBILE) {
+            this.stato = enum_1.StatoMezzo.IN_USO;
+            console.log("Utente: ".concat(utente.nome, " ").concat(utente.cognome, "\nmezzo: ").concat(this.tipo, " con ID ").concat(this.ID, "\nstato del mezzo: ").concat(this.stato));
             return;
         }
     };
@@ -29,11 +30,11 @@ var Utente = /** @class */ (function () {
             console.log('Impossibile effettuare la prenotazione. Si prega di inserire tutti i dati richiesti.');
             return;
         }
-        if (mezzo.stato === 'disponibile') {
+        if (mezzo.stato === enum_1.StatoMezzo.DISPONIBILE) {
             console.log("la prenotazione del mezzo \u00E8 statta effettuata con successo.\nIl metodo di pagamento utilizzato \u00E8: ".concat(this.metodoDiPagamentoPreferito));
         }
         else {
-            console.log("il mezzo che vuoi prenotare con ID:".concat(mezzo.ID, " \u00E8 attualmente in uso"));
+            console.log("il mezzo che vuoi prenotare con ID:".concat(mezzo.ID, " \u00E8 attualmente ").concat(mezzo.stato));
         }
     };
     return Utente;
@@ -51,7 +52,7 @@ var Città = /** @class */ (function () {
     Città.prototype.visualizzaMezziDisponibili = function () {
         console.log("Mezzi disponibili a ".concat(this.nomeCittà, ":"));
         this.elencoMezziDisponibili.forEach(function (mezzo) {
-            if (mezzo.stato === 'disponibile') {
+            if (mezzo.stato === enum_1.StatoMezzo.DISPONIBILE) {
                 console.log("- ".concat(mezzo.tipo, " con ID ").concat(mezzo.ID));
             }
         });
